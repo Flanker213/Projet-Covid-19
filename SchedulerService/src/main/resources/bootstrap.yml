@@ -1,0 +1,23 @@
+server:
+    address: 192.168.1.17
+    port: 8282
+spring:
+    application:
+        name: SchedulerService
+    cloud:
+        consul:
+            host: 127.0.0.1
+            port: 8500
+            discovery:
+                instanceId: ${spring.application.name}_${server.address}:${server.port}
+                healthCheckPath: /HealthCheck
+                healthCheckInterval: 40s
+                tags: Sources de donnees, DataSource, API Covid France, Scheduler, Update Data Covid, Scheduling Data
+                register: true
+                prefer-ip-address: true
+                ip-address: ${server.address}
+                port: ${server.port}
+                register-health-check: true
+                health-check-critical-timeout: 30s
+            config:
+                enabled: true

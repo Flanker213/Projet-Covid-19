@@ -1,0 +1,92 @@
+# A enlever si le Spring cloud est configuré ; avec Consul et garder dans bootstrap
+server:
+  address: 127.0.0.1
+  port: 7575
+# ===============================
+# = Spring Datasource, JPA
+# ===============================
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/projet_covid_db_comptes_utilisateurs?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    #initialization-mode: always
+    continue-on-error: true
+  jpa:
+    hibernate.ddl-auto: update
+    show-sql: true
+    #database-platform: org.hibernate.dialect.MySQL55Dialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        #temp:
+        #  use_jdbc_metadata_defaults: false
+# ===============================
+# = Spring Multipart
+# ===============================
+  servlet:
+    multipart:
+      enabled: true # Activer le téléversement de fichiers en plusieures parties (à l'aide de formulaires multiparts)
+      file-size-threshold: 5KB # Seuil utilisé pour l'ecriture des fichiers dans le Disque local.
+      max-file-size: 200MB
+      max-request-size: 150MB
+  main:
+    allow-bean-definition-overriding: true
+# ===============================
+# = Spring JavaMail
+# ===============================
+  mail:
+    host: smtp.gmail.com
+    port: 587 #465 OR 587
+    protocol: smtp
+    username: projectxlstest@gmail.com
+    password: c26d8792c7c53821c2ebe27f344e675144342171
+    properties: 
+      mail:
+        transport.protocol: smtp
+        smtps: 
+          auth: true
+          starttls.enable: true
+          timeout: 8000
+  messages:
+    basename: messages
+# ===============================
+# = Loggings configurations
+# =============================== 
+security.jwt.uri: /login/**
+security.jwt.header: Authorization
+security.jwt.prefix: Bearer 
+security.jwt.expiration: 72000 # nombres de secondes ==> 20 Heures
+security.jwt.secret: YXR0ZW50aW9uIGMnZXN0IHVuIHNlY3JldCA6KQ==
+security.jwt.issuer: http://localhost:8181
+security.jwt.audience: Consultants Statistiques COVID
+
+support.email: adresse@gmail.com
+support.email.html: true
+nom-complet-realisateur-projet: VOTRE NOM COMPLET
+
+client.adress-base: http://localhost:4200
+emails-notifications:
+  adresses[0]: mail1@mail.net
+  adresses[1]: mail2@mail.net
+# ===============================
+# = Repertoire de stockage de fichiers
+# ===============================
+fichier:
+  photos-repertoire: C:\\Projet.Covid\\Fichiers\\avatars-utilisateurs
+  autres-repertoire: C:\\Projet.Covid\\Fichiers\\autres-fichiers
+# ===============================
+# = Noms des micro-services et services web
+# =============================== 
+service:
+  robot-service: http://RobotSchedulerService
+  securite-service: http://SecuriteService
+  statistiques-service: http://StatistiquesService
+# ===============================
+# = Scheduler simple - Tâche à exécuter
+# ===============================
+# 5am de chaque jour
+purge:
+  cron:
+    expression: 0 0 5 * * ?

@@ -1,0 +1,49 @@
+# A enlever si le Spring cloud est configuré ; avec Consul et garder dans bootstrap
+server:
+  address: 127.0.0.1
+  port: 7272
+# ===============================
+# = MongoDB datasource
+# ===============================
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  data: 
+    mongodb:
+#      authentication-database: admin
+#      username: root
+#      password: root
+      database: Covid-19
+      host: localhost
+      port: 27017
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration
+  quartz:
+    job-store-type: memory #jdbc # Si JDBC est précisé, il faut configurer dans ce cas la source de données pour persister les infos des Job --> Voir Doc Quartz !
+# ===============================
+# = URLs Données
+# ===============================
+url-serveur-recherche-donnees: https://coronavirusapifr.herokuapp.com/data
+url-serveur-recherche-donnees-departements: ${url-serveur-recherche-donnees}/live/departements
+# ===============================
+# = Quartz Log level
+# ===============================
+logging.level.org.springframework.scheduling.quartz: DEBUG
+logging.level.org.quartz: DEBUG
+# ===============================
+# = Recupérations des données
+# ===============================
+recuperer-statistiques:
+  au-demarrage: false # true/false si on souhaite recupérer les données au démarrage du service (True par défaut)
+  frequence-minutes: # option 1: utilisée par défaut, si activée alors l'option 2 sera ignorée
+    activer: true
+    minutes: 1 # Si non précisée ou non valide (valeur négative ou non numérique) alors la Valeur 30 (pour 30 minutes) sera utilisée
+  frequence-definie: # option 2: A utiliser si l'option 1 n'est pas activer (activer=false)
+    activer: false
+    fequence: jour # par jour (journalier) [ NON PRIS en charge dans cette version 'semaine' (hebdomadaire) et 'mois' (mensuel) ]
+    heure-execution: 00:05 # HH:mm --> ici à 23h 58 minutes
+# ===============================
+# = Autres configs
+# ===============================
+    
+  
