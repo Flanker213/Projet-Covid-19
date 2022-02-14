@@ -26,7 +26,7 @@ public class SwaggerConfig {
 	private ApiInfo apiInfo() {
 		return new ApiInfo("Spring Boot Rest API for managing covid data",
 				"API offrant les services de gestion des données pour le projet Covid", "v1",
-				"Terms of uses", new Contact("Amine ASSAS", "", "assas-a@outlook.fr"),
+				"Terms of uses", new Contact("Amine", "", "Amine@mail"),
 				"Tout droit reservé", "https://url-license", Collections.emptyList());
 	}
 }

@@ -61,7 +61,7 @@ public class DataCovidRecuperationServiceImpl implements DataCovidRecuperationSe
 	private static final Logger logger = LoggerFactory.getLogger(DataCovidRecuperationServiceImpl.class);
 	private static final String ID_Job_Detail = "JOB-DATA-COVID";
 	private static final String MINUTES_DEFAUT = "30";
-	private static final String HEURE_DEFAUT = "00:0 5";
+	private static final String HEURE_DEFAUT = "23:59";
 	private static final String RECUPERER_AU_DEMARRAGE = "true";
 	private Instant instantProchaineRecuperation = null;
 	// Variable de classe permettant de verfier si les données ont été déjà recupérées au démarrage

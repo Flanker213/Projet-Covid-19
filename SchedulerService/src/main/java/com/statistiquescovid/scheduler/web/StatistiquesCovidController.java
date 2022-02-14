@@ -115,4 +115,25 @@ public class StatistiquesCovidController {
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////                                                              //////////////////
+	/////////////////////////////   POUR LES TESTS de RECUPERATIONs Des DONNées MANUELLEMENT   //////////////////
+	/////////////////////////////                                                              //////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	//	@Autowired
+	//	private com.statistiquescovid.scheduler.services.DataCovidRecuperationService dataRecuperationService;
+	//	@ApiOperation(value = "Recupérer manuellement les données")
+	//	@GetMapping({"recuperer-manuellement"})
+	//	public ResponseEntity<List<StatistiquesCovidDepartement>> recupererManuellement() {
+	//		List<StatistiquesCovidDepartement> response = this.dataRecuperationService.recupererDonneesActuellesSurTousLesDepartements();
+	//		if(response != null) {
+	//			logger.info("# La méthode recupererManuellement() vient d'être exécutée.");
+	//			return new ResponseEntity<List<StatistiquesCovidDepartement>>(response, HttpStatus.OK);
+	//		}
+	//
+	//		logger.info("# Erreur lors de l'exécution de la méthode recupererManuellement()");
+	//		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	//	}
+
 }

@@ -111,7 +111,7 @@ public class DataCovidRepositoryImpl implements DataCovidRepositoryCustom {
 			criteria.and("reg").is(regionId);
 		}
 
-		
+
 		MatchOperation filterOperation = Aggregation.match(criteria);
 		// TODO : Appliquer l'ordre de trie spécifié
 		SortOperation sortOperation = Aggregation.sort(Sort.by("rad").ascending()); // 'CC' par défaut !
@@ -218,7 +218,7 @@ public class DataCovidRepositoryImpl implements DataCovidRepositoryCustom {
 			criteria.and("reg").is(regionId);
 		}
 
-		
+
 		MatchOperation filterOperation = Aggregation.match(criteria);
 
 		// Grouper les données par Département, ensuite effectuer des opérations d'Aggrégation :
