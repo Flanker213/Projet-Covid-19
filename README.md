@@ -31,7 +31,7 @@
 
 
 3. Exécuter les projets :
-	3.1. Cas des projets javascript
+	3.1. Cas des projets JavaScript
 		
 		3.1.1. 'node-server' : la commande 'npm start' ou 'node index.js' ---> Les options actuelles feront écouter le serveur dans le port 5000
 
@@ -39,6 +39,6 @@
 		
 		3.1.2. 'client-covid-19' : la commande 'ng serve' ---> son serveur ecoutera dans le port par défaut 4200
 
-	3.2. Cas des projets java : le plus simple de les ouvrir dans un IDE comme Eclipse, sinon générer des Jars exécutables
+	3.2. Cas des projets Java : le plus simple de les ouvrir dans un IDE comme Eclipse, sinon générer des Jars exécutables
 
 4. Une fois tous les services lancés, ouvrir, dans le navigateur web, l'adresse 'http://localhost:4200'
