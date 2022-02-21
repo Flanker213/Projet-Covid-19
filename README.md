@@ -11,12 +11,12 @@
 
 1. Configurer les adresses des micro-services
 
-	1.1. Service 'SecuriteService' : dans le fichier application.yml ---> voir la photo de capture config 
+	1.1. Service 'SecuriteService' : dans le fichier application.yml ---> 
 		
 		1.1.1. Mettre l'IP de votre machine - Utiliser l'IP configurée ici dans le Serveur NodeJS
 	
 	
-	1.2. Service 'SchedulerService' : dans le fichier application.yml ---> voir la photo de capture config
+	1.2. Service 'SchedulerService' : dans le fichier application.yml --->
 		
 		1.2.1. Mettre l'IP de votre machine - Utiliser l'IP configurée ici dans le Serveur NodeJS
 	
